@@ -1,0 +1,7 @@
+Gemnasium Enterprise 1.0.0 Documentation
+========================================
+
+Welcome to the Gemnasium Enterprise 1.0.0 documentation, where you can find information and guides to help you with Gemnasium Enterprise and start exploring its features.
+
+Use the left navigation bar to browse the documentation, the Search bar in the top-left to look for something specific, or the links below to access some highlights.
+
