@@ -33,4 +33,6 @@ Contents:
 
    installation/prerequisites
    installation/docker_image
-
+   installation/upgrade
+   installation/troubleshoot
+   installation/backup
