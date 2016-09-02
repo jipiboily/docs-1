@@ -13,6 +13,6 @@ Build the doc:
 
     make html
 
-To server the documentation site, with live-reload:
+To serve the documentation site, with live-reload:
 
-    sphinx-autobuild docs docs/_build/html
+    make livehtml
