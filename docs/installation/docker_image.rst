@@ -92,13 +92,18 @@ gemnasium-logs (volume)   /var/log                  Gemnasium logs
 Gemnasium data is composed mostly of the PostgreSQL database files, but also nsq data, etc.
 These files must be backed up, refer to the :doc:`backup`. section.
 
-.. note: The logs are not rotated automatically, it must be processed by the host.
+The ``/var/log`` contains the OS logs, and everything dedicated to gemnasium in ``/var/log/gemnasium``.
+
+.. note: The logs files are rotated automatically.
 
 Logging
-^^^^^^^
+-------
 
 By default, all logs will be sent to the standard output of the container
-(``stdout``). This makes it easier to troubleshoot if needed.
+(``stdout``), along with files in ``/var/log``. This makes it easier to troubleshoot if needed.
+
+Graylog
+^^^^^^^
 
 Gemnasium Enterprise can be configured to log to a distant `Graylog <https://www.graylog.org>`_ server.
 To enable this feature, use the following environment variables:
@@ -130,4 +135,15 @@ Example:
 Both variables must be set to activate the GELF output.
 
 .. note: Logs will still be available in the container logs (stdout)
+
+Obtening a shell
+----------------
+
+The docker image doesn't a SSH server, because docker provides everything needed to get a shell console inside the container::
+
+    docker exec -it gemnasium bash
+
+will create a new bash session, with the root user.
+
+.. warning:: With great power comes great responsability: as root, you can damage files inside the container, including persisted data.
 
