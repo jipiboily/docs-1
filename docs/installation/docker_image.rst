@@ -136,7 +136,7 @@ Both variables must be set to activate the GELF output.
 
 .. note: Logs will still be available in the container logs (stdout)
 
-Obtening a shell
+Obtaining a shell
 ----------------
 
 The docker image doesn't a SSH server, because docker provides everything needed to get a shell console inside the container::
