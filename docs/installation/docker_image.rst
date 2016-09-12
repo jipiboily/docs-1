@@ -10,6 +10,8 @@ In order to be able to download the Gemnasium Enterprise docker image from the `
 authenticated on docker hub, and provide the username used to pull the image to
 Gemnasium.
 
+.. todo: We'll probably leave the gemnasium/enterprise image public, to simplify the installation
+
 .. _run_docker_image:
 
 Run Docker Image
@@ -30,6 +32,7 @@ Run the image::
     --hostname gemnasium.example.com \
     --name gemnasium \
     --restart always \
+    -e REDIRECT_HTTP_TO_HTTPS=false \
     -p 8080:80 \
     -v gemnasium-data:/var/opt/gemnasium/ \
     -v gemnasium-logs:/var/log/ \
@@ -42,8 +45,57 @@ This will pull and start Gemnasium Enterprise.
 The service is available after a few seconds on http://gemnasium.example.org
 (or any other domain you have passed as ``hostname``).
 
+.. _ssl_configuration
 
-.. todo: SSL support
+SSL
+^^^
+
+The image is configured to serve with a default self-signed certificate.
+To enable SSL support, the certificate file **must** be named after the server name.
+
+Example: for `gemnasium.example.com`, the certificate files must be named:
+
+* ``gemnasium.example.com.cert.pem`` for the certificate
+* ``gemnasium.example.com.key.pem`` for its private key
+
+If the certificate has an intermediate chain, it must concatenated after the server certificate::
+
+    cat server.cert.pem ca-chain.cert.pem > gemnasium.example.com.cert.pem
+
+The 2 files **must** be available in `/etc/gemnasium/ssl`:
+
+.. code-block:: console
+  :emphasize-lines: 5-6
+
+  docker run --detach  \
+    --hostname gemnasium.example.com \
+    --name gemnasium \
+    --restart always \
+    -v /host/path/to/ssl/:/etc/gemnasium/ssl \
+    -p 80:80 -p 443:443 \
+    -v gemnasium-data:/var/opt/gemnasium/ \
+    -v gemnasium-logs:/var/log/ \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    gemnasium/enterprise:latest
+
+.. note:: The environment variable ``REDIRECT_HTTP_TO_HTTPS`` is `true` by default, and should be omited once ssl is configured.
+
+If you need to use a different port for https than 443, use the ``EXTERNAL_URL`` env var to specify the full URL of your Gemnasium Enterprise server, including the port used:
+
+.. code-block:: console
+  :emphasize-lines: 7
+
+  docker run --detach  \
+    --hostname gemnasium.example.com \
+    --name gemnasium \
+    --restart always \
+    -v /host/path/to/ssl/:/etc/gemnasium/ssl \
+    -p 80:80 -p 8443:443 \
+    -e EXTERNAL_URL=https://gemnasium.example.com:8443/ \
+    -v gemnasium-data:/var/opt/gemnasium/ \
+    -v gemnasium-logs:/var/log/ \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    gemnasium/enterprise:latest
 
 SELinux
 ^^^^^^^
@@ -95,6 +147,9 @@ These files must be backed up, refer to the :doc:`backup`. section.
 The ``/var/log`` contains the OS logs, and everything dedicated to gemnasium in ``/var/log/gemnasium``.
 
 .. note: The logs files are rotated automatically.
+
+Finally, as explained in the :ref:`_ssl_configuration` section, your certificate and key must be available in the `/etc/gemnasium/ssl` folder.
+
 
 Logging
 -------
