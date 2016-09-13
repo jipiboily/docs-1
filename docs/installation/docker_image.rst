@@ -14,61 +14,45 @@ Gemnasium.
 
 .. _run_docker_image:
 
-Run Docker Image
-----------------
+Preparing volumes
+-----------------
 
-A persistent volume is needed to store Gemnasium Enterprise.
+Persistent volumes are needed to store Gemnasium Enterprise data.
+The easiest way to get started, is to create local volumes on your server, but it can be any kind of volume supported by the docker engine.
 
 .. seealso:: Please refer to Docker Volumes for more information: https://docs.docker.com/engine/tutorials/dockervolumes/
 
-Create a volume if needed::
+To create local volumes, on you server::
 
     docker volume create --name gemnasium-data
     docker volume create --name gemnasium-logs
 
-Run the image::
+.. _ssl_configuration:
 
-  docker run --detach  \
-    --hostname gemnasium.example.com \
-    --name gemnasium \
-    --restart always \
-    -e REDIRECT_HTTP_TO_HTTPS=false \
-    -p 8080:80 \
-    -v gemnasium-data:/var/opt/gemnasium/ \
-    -v gemnasium-logs:/var/log/ \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    gemnasium/enterprise:latest
+Configuring SSL
+---------------
 
-.. note:: Gemnasium needs the docker socket to be mount, since some internal jobs are launched inside containers.
+A valid certificate must be provided to run Gemnasium Enterprise with the integrated SSL server (nginx).
+If you don't need Gemnasium Enterprise to serve content on https directly, go directly to the section: :ref:`run_without_ssl`.
 
-This will pull and start Gemnasium Enterprise.
-The service is available after a few seconds on http://gemnasium.example.org
-(or any other domain you have passed as ``hostname``).
+The certificate files **must** be named after the server name.
 
-.. _ssl_configuration
-
-SSL
-^^^
-
-The image is configured to serve with a default self-signed certificate.
-To enable SSL support, the certificate file **must** be named after the server name.
-
-Example: for `gemnasium.example.com`, the certificate files must be named:
+Example: for `gemnasium.example.com`, the certificate files **must** be named:
 
 * ``gemnasium.example.com.cert.pem`` for the certificate
 * ``gemnasium.example.com.key.pem`` for its private key
+
+Gemnasium will look after 2 files with the ``.cert.pem`` and ``.key.pem`` suffix.
 
 If the certificate has an intermediate chain, it must concatenated after the server certificate::
 
     cat server.cert.pem ca-chain.cert.pem > gemnasium.example.com.cert.pem
 
-The 2 files **must** be available in `/etc/gemnasium/ssl`:
+The 2 files **must** be available in ``/etc/gemnasium/ssl``, inside the container.
 
 .. code-block:: console
-  :emphasize-lines: 5-6
 
   docker run --detach  \
-    --hostname gemnasium.example.com \
     --name gemnasium \
     --restart always \
     -v /host/path/to/ssl/:/etc/gemnasium/ssl \
@@ -78,7 +62,9 @@ The 2 files **must** be available in `/etc/gemnasium/ssl`:
     -v /var/run/docker.sock:/var/run/docker.sock \
     gemnasium/enterprise:latest
 
-.. note:: The environment variable ``REDIRECT_HTTP_TO_HTTPS`` is `true` by default, and should be omited once ssl is configured.
+.. note:: Gemnasium needs the docker socket to be mount, since some internal jobs are launched inside containers.
+
+This will pull and start Gemnasium Enterprise. Your instance will be available at https://gemnasium.example.com after a few seconds.
 
 If you need to use a different port for https than 443, use the ``EXTERNAL_URL`` env var to specify the full URL of your Gemnasium Enterprise server, including the port used:
 
@@ -86,7 +72,6 @@ If you need to use a different port for https than 443, use the ``EXTERNAL_URL``
   :emphasize-lines: 7
 
   docker run --detach  \
-    --hostname gemnasium.example.com \
     --name gemnasium \
     --restart always \
     -v /host/path/to/ssl/:/etc/gemnasium/ssl \
@@ -97,14 +82,40 @@ If you need to use a different port for https than 443, use the ``EXTERNAL_URL``
     -v /var/run/docker.sock:/var/run/docker.sock \
     gemnasium/enterprise:latest
 
+and start browsing https://gemnasium.example.com:8443/
+
+.. _run_without_ssl:
+
+Running without SSL
+-------------------
+
+.. warning:: We strongly discourage running Gemnasium Enterprise without any SSL termination. This section is present if you already have SSL terminations, like secured reverse-proxies, ssl appliances, etc.
+
+Run the image::
+
+  docker run --detach  \
+    --name gemnasium \
+    --restart always \
+    -e REDIRECT_HTTP_TO_HTTPS=false \
+    -p 80:80 \
+    -v gemnasium-data:/var/opt/gemnasium/ \
+    -v gemnasium-logs:/var/log/ \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    gemnasium/enterprise:latest
+
+.. note:: The environment variable ``REDIRECT_HTTP_TO_HTTPS`` is `true` by default, and must be ``false`` in this case.
+
+The service is available after a few seconds on the port 80 of your server.
+
+
 SELinux
 ^^^^^^^
 .. todo: test with SELinux in real conditions
 
 Gemnasium Enterprise can't be run directly on SELinux servers, because:
 
-1. the volumes will be readonly by default
-2. the docker socket will be restricted to the host
+1. The volumes will be readonly by default
+2. The docker socket will be restricted to the host
 
 Use this command instead:
 
@@ -112,10 +123,10 @@ Use this command instead:
   :emphasize-lines: 6-8
 
   docker run --detach  \
-    --hostname gemnasium.example.com \
     --name gemnasium \
     --restart always \
-    -p 8080:80 \
+    -v /host/path/to/ssl/:/etc/gemnasium/ssl \
+    -p 80:80 -p 443:443 \
     -v gemnasium-data:/var/opt/gemnasium/:Z \
     -v gemnasium-logs:/var/log/:Z \
     -v /var/run/docker.sock:/var/run/docker.sock:Z \
@@ -148,7 +159,7 @@ The ``/var/log`` contains the OS logs, and everything dedicated to gemnasium in 
 
 .. note: The logs files are rotated automatically.
 
-Finally, as explained in the :ref:`_ssl_configuration` section, your certificate and key must be available in the `/etc/gemnasium/ssl` folder.
+Finally, as explained in the :ref:`ssl_configuration` section, your certificate and key must be available in the ``/etc/gemnasium/ssl`` folder.
 
 
 Logging
@@ -176,10 +187,10 @@ Example:
   :emphasize-lines: 9,10
 
   docker run --detach  \
-    --hostname gemnasium.example.com \
     --name gemnasium \
     --restart always \
-    -p 8080:80 \
+    -v /host/path/to/ssl/:/etc/gemnasium/ssl \
+    -p 80:80 -p 443:443 \
     -v gemnasium-data:/var/opt/gemnasium/ \
     -v gemnasium-logs:/var/log/ \
     -v /var/run/docker.sock:/var/run/docker.sock \
@@ -200,5 +211,5 @@ The docker image doesn't a SSH server, because docker provides everything needed
 
 will create a new bash session, with the root user.
 
-.. warning:: With great power comes great responsability: as root, you can damage files inside the container, including persisted data.
+.. warning:: With great power comes great responsability: as root, you can damage files inside the container, including your persisted data.
 
