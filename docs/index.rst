@@ -32,6 +32,7 @@ Contents:
    :caption: Installation and Configuration
 
    installation/prerequisites
+   installation/firewall
    installation/docker_image
    installation/upgrade
    installation/troubleshoot

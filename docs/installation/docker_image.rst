@@ -140,6 +140,8 @@ the container will run with, basically it runs ``chcon -Rt svirt_sandbox_file_t
 
 Please refer to this project to install the proper SELinux module to fix the second point.
 
+.. _docker_image_volumes:
+
 Volumes
 ^^^^^^^
 
@@ -203,7 +205,7 @@ Both variables must be set to activate the GELF output.
 .. note: Logs will still be available in the container logs (stdout)
 
 Obtaining a shell
-----------------
+-----------------
 
 The docker image doesn't a SSH server, because docker provides everything needed to get a shell console inside the container::
 
