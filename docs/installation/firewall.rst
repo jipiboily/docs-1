@@ -2,12 +2,12 @@ Firewall configuration
 ======================
 
 Gemnasium Enterprise is designed to run behind your firewalls, inside your own network.
-It should be completely isolated from the outside, especially for incoming connections.
+It should be completely isolated from the outside, especially from incoming connections.
 
 Incoming traffic
 ----------------
 
-Gemnasium is just exposing 2 ports:
+Gemnasium only exposes 2 ports:
 
 ========================  ========================  ================
 Port                      Usage                     protocol
@@ -17,12 +17,12 @@ Port                      Usage                     protocol
 ========================  ========================  ================
 
 It's your responsibility to configure your network and firewall to restrict access to these ports.
-By default, Gemnasium will just expose the port 80 to redirect on the port 443. Custom ports might be used, refer to :ref:`ssl_configuration` if needed.
+By default, Gemnasium exposes port 80 only to redirect to port 443. Custom ports might be used, refer to :ref:`ssl_configuration` if needed.
 
 Outgoing traffic
 ----------------
 
-While Gemnasium Enterprise should completely isolated from the outside for incoming connections, some outgoing traffic is required for normal operation.
+While Gemnasium Enterprise should completely isolated from the outside for incoming connections, some outgoing traffic is necessary for normal operation.
 The following ports must be open on your firewall for outgoing traffic:
 
 ========================  ========================  ====== ==========================================
@@ -35,15 +35,15 @@ index.docker.io           443                       tcp    Pull updates of gemna
 What data is sent to sync.gemnasium.com?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Your content is private, and will remain private. Anyway, synchronizing all packages, versions, changelogs, advisosories, etc. with
-the whole main DB would require a huge storage, and a lot of bandwidth.
+Your content is private, and will remain private. But synchronizing all packages, versions, changelogs, advisosories, etc. with
+Gemnasium's main DB would require a huge amount of storage and a lot of bandwidth.
 
-To avoid this situation, your instance of Gemnasium Enterprise will send a list of packages (dependencies) used in your projects to https://sync.gemnasium.com
-In return, Gemnasium syncer will provide all the meta corresponding to this request, including advisories.
+To avoid this situation, your instance of Gemnasium Enterprise periodically sends a list of the packages (dependencies) used in your projects to https://sync.gemnasium.com
+In return, Gemnasium syncer provides all the meta corresponding to this request, including the security advisories.
 
-.. note:: Private dependencies will be completely ignored by the syncer.
+.. note:: Private dependencies are becompletely ignored by the syncer.
 
-Advisories can be created at any time on Gemnasium.com, that's why your instance will synchronize every five minutes.
+Advisories can be created at any time on Gemnasium.com, that's why your instance synchronizes every five minutes.
 If one of your project is using a dependency affected by a security issue, you will be instantly notified by your instance.
 
-.. note:: Gemnasium is using data (advisories) from security companies (partnerships only). Your data will never be submitted directly to these companies, but Gemnasium may provide anonymous statitics.
+.. note:: Gemnasium is using data (advisories) from security companies (partnerships only). Your data will never be submitted directly to these companies, but Gemnasium may share anonymized statitical data.
