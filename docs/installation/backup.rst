@@ -1,7 +1,7 @@
 Data Backup
 ===========
 
-Gemnasium Enterprise will store its data a persistent volume (cf. :ref:`docker_image_volumes`.).
+Gemnasium Enterprise will store its data in a persistent volume (cf. :ref:`docker_image_volumes`.).
 It is YOUR responsability to backup this volume. Gemnasium Entreprise has no capacities of backing up data.
 
 Snapshots
@@ -19,7 +19,7 @@ and remove it completely::
 
     docker rm gemnasium
 
-Once the data restored, run again the image: :ref:`run_docker_image`
+Once the data is restored, run again the image: :ref:`run_docker_image`
 
 Using docker
 ------------
@@ -37,4 +37,4 @@ With your backup in the local directly (pwd), untar your archive to restore the 
 
     $ docker run --rm -v $(pwd):/backup -v gemnasium-data:/var/opt/gemnasium/ gemnasium/enterprise bash -c "cd /var/opt/gemnasium && tar xvf /backup/backup.tar --strip 1"
 
-Once the data restored, run again the image: :ref:`run_docker_image`
+Once the data is restored, run again the image: :ref:`run_docker_image`

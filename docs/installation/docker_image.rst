@@ -42,7 +42,7 @@ Example: for `gemnasium.example.com`, the certificate files **must** be named:
 * ``gemnasium.example.com.cert.pem`` for the certificate
 * ``gemnasium.example.com.key.pem`` for its private key
 
-Gemnasium will look after 2 files with the ``.cert.pem`` and ``.key.pem`` suffix.
+Gemnasium will look for 2 files with the ``.cert.pem`` and ``.key.pem`` suffix.
 
 If the certificate has an intermediate chain, it must concatenated after the server certificate::
 
@@ -207,7 +207,7 @@ Both variables must be set to activate the GELF output.
 Obtaining a shell
 -----------------
 
-The docker image doesn't a SSH server, because docker provides everything needed to get a shell console inside the container::
+The docker image doesn't have a SSH server, because docker provides everything needed to get a shell console inside the container::
 
     docker exec -it gemnasium bash
 
