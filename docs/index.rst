@@ -34,6 +34,7 @@ Contents:
    installation/prerequisites
    installation/firewall
    installation/docker_image
+   installation/env
    installation/upgrade
    installation/troubleshoot
    installation/backup
