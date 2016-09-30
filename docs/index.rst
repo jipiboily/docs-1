@@ -34,6 +34,7 @@ Contents:
    installation/prerequisites
    installation/firewall
    installation/docker_image
+   installation/smtp
    installation/env
    installation/upgrade
    installation/troubleshoot
