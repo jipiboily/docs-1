@@ -14,10 +14,11 @@ SMTP can be configured by passing environment variable to the docker container:
 ====================  ===========================
 Env variables         Usage
 ====================  ===========================
-SMTP_SERVICE_HOST     SMTP server host address
-SMTP_SERVICE_PORT     SMTP server port
-SMTP_USER_NAME        SMTP username
-SMTP_PASSWORD         SMTP password
+SMTP_SERVICE_HOST     Server host address
+SMTP_SERVICE_PORT     Server port
+SMTP_USER_NAME        Username
+SMTP_PASSWORD         Password
+SMTP_INSECURE         Skip SSL verification
 ====================  ===========================
 
 The SMTP password can be plain auth, or a secret (CRAM-MD5 auth).
