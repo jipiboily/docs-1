@@ -19,6 +19,6 @@ Hardware
 Software
 ^^^^^^^^
 
-* OS: RedHat (RHEL, Atomic Host, Centos & Fedora flavors), Debian Stable. Any OS running docker should work, but is not officially supported
+* OS: RedHat (RHEL, Atomic Host, Centos & Fedora flavors), Debian Stable. Any OS running docker should work but is not officially supported.
 * Docker >= 1.9.1
 

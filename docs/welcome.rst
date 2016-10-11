@@ -5,12 +5,12 @@ Welcome to the Gemnasium Enterprise |version| documentation, where you can find 
 
 Use the left navigation bar to browse the documentation, the Search bar in the top-left to look for something specific, or the links below to access some highlights.
 
-.. note:: Gemnasium Enterprise Edition will be refered as "GEE" in this documentation
+.. note:: Gemnasium Enterprise Edition will be referred as "GEE" in this documentation
 
 Release Notes
 =============
 
-1.0.0-beta1 - 2016-09-17
+1.0.0-beta1 - 2016-10-17
 ------------------------
 
 * First private beta

@@ -11,8 +11,10 @@ Install sphinx, and sphinx-autobuild to live build the docs:
 
 Build the doc:
 
+    cd docs
     make html
 
 To serve the documentation site, with live-reload:
 
+    cd docs
     make livehtml
