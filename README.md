@@ -1,6 +1,6 @@
 # Gemnasium Enterprise Docs Sources
 
-This repositoring hosts the [ Gemnasium Entreprise ](http://entreprise.gemnasium.com) documentation files.
+This repositoring hosts the [ Gemnasium Enterprise ](http://enterprise.gemnasium.com) documentation files.
 The documentation is generated automatically by [readthedocs](https://readthedocs.org), for each commit.
 
 ## Generate files locally

@@ -2,7 +2,8 @@ Data Backup
 ===========
 
 Gemnasium Enterprise will store its data in a persistent volume (cf. :ref:`docker_image_volumes`.).
-It is YOUR responsibility to backup this volume. Gemnasium Entreprise has no capacities of backing up data.
+
+It is YOUR responsibility to backup this volume. Gemnasium Enterprise has no capacities of backing up data.
 
 Snapshots
 ---------
