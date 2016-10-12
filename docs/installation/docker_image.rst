@@ -69,7 +69,7 @@ This will pull and start Gemnasium Enterprise. Your instance will be available a
 If you need to use a different port for https than 443, use the ``EXTERNAL_URL`` env var to specify the full URL of your Gemnasium Enterprise server, including the port used:
 
 .. code-block:: console
-  :emphasize-lines: 7
+  :emphasize-lines: 6
 
   docker run --detach  \
     --name gemnasium \
