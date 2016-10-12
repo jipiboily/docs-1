@@ -10,7 +10,7 @@ In order to be able to download the Gemnasium Enterprise docker image from the `
 authenticated on docker hub, and provide the username used to pull the image to
 Gemnasium.
 
-.. todo: We'll probably leave the gemnasium/enterprise image public, to simplify the installation
+To have access to the Gemnasium Enterprise image, send us the Docker Hub user you want; we will share the image with that user.
 
 .. _run_docker_image:
 
@@ -69,7 +69,7 @@ This will pull and start Gemnasium Enterprise. Your instance will be available a
 If you need to use a different port for https than 443, use the ``EXTERNAL_URL`` env var to specify the full URL of your Gemnasium Enterprise server, including the port used:
 
 .. code-block:: console
-  :emphasize-lines: 7
+  :emphasize-lines: 6
 
   docker run --detach  \
     --name gemnasium \

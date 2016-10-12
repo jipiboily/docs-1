@@ -1,16 +1,16 @@
 Firewall configuration
 ======================
 
-Gemnasium Enterprise is designed to run behind your firewalls, inside your own network.
+Gemnasium Enterprise is designed to run behind your firewalls, inside your network.
 It should be completely isolated from the outside, especially from incoming connections.
 
 Incoming traffic
 ----------------
 
-Gemnasium only exposes 2 ports:
+Gemnasium only exposes two ports:
 
 ========================  ========================  ================
-Port                      Usage                     protocol
+Port                      Usage                     Protocol
 ========================  ========================  ================
 80                        clear connection          http
 443                       secure connection         https
@@ -25,12 +25,12 @@ Outgoing traffic
 While Gemnasium Enterprise should be completely isolated from the outside for incoming connections, some outgoing traffic is necessary for normal operation.
 The following ports must be open on your firewall for outgoing traffic:
 
-========================  ========================  ====== ==========================================
-Address                   port                      proto  Usage
-========================  ========================  ====== ==========================================
-sync.gemnasium.com        443                       tcp    Sync with Gemnasium main DB
-index.docker.io           443                       tcp    Pull updates of gemnasium/enterprise image
-========================  ========================  ====== ==========================================
+========================  ========================  ========= ==========================================
+Address                   Port                      Protocol  Usage
+========================  ========================  ========= ==========================================
+sync.gemnasium.com        443                       tcp       Sync with Gemnasium main DB
+index.docker.io           443                       tcp       Pull updates of gemnasium/enterprise image
+========================  ========================  ========= ==========================================
 
 What data is sent to sync.gemnasium.com?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -43,7 +43,7 @@ In return, Gemnasium syncer provides all the metadata corresponding to this requ
 
 .. note:: Private dependencies are completely ignored by the syncer.
 
-Advisories can be created at any time on Gemnasium.com, that's why your instance synchronizes every five minutes.
-If one of your project is using a dependency affected by a security issue, you will be instantly notified by your instance.
+Advisories can be created at any time on Gemnasium.com; that's why your instance synchronizes hourly.
+If one of your projects is using a dependency affected by a security issue, you will be instantly notified by your instance.
 
 .. note:: Gemnasium is using data (advisories) from security companies (partnerships only). Your data will never be submitted directly to these companies, but Gemnasium may share anonymized statistical data.
