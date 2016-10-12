@@ -10,7 +10,7 @@ In order to be able to download the Gemnasium Enterprise docker image from the `
 authenticated on docker hub, and provide the username used to pull the image to
 Gemnasium.
 
-To have access to the Gemnasium Enterprise image, you need to have a license from us, and we will then give you access to it via the Docker Hub. It is a private image.
+To have access to the Gemnasium Enterprise image, send us the Docker Hub user you want; we will share the image with that user.
 
 .. _run_docker_image:
 
