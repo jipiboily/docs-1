@@ -43,7 +43,7 @@ In return, Gemnasium syncer provides all the metadata corresponding to this requ
 
 .. note:: Private dependencies are completely ignored by the syncer.
 
-Advisories can be created at any time on Gemnasium.com; that's why your instance synchronizes every five minutes.
+Advisories can be created at any time on Gemnasium.com; that's why your instance synchronizes hourly.
 If one of your projects is using a dependency affected by a security issue, you will be instantly notified by your instance.
 
 .. note:: Gemnasium is using data (advisories) from security companies (partnerships only). Your data will never be submitted directly to these companies, but Gemnasium may share anonymized statistical data.
