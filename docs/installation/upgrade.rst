@@ -2,7 +2,7 @@ Upgrade Gemnasium Enterprise
 ============================
 
 While the data about packages, versions, etc. are automatically updaded, and
-stored in your local database, Gemnasium Entreprise won't upgrade itself
+stored in your local database, Gemnasium Enterprise won't upgrade itself
 automatically.
 
 Using latest version
@@ -10,7 +10,7 @@ Using latest version
 
 Every night, a new build of Gemnasium Enterprise source code will generate a ``gemnasium/enterprise:latest`` image.
 
-To upgrade Gemnasium Entreprise to a new version:
+To upgrade Gemnasium Enterprise to a new version:
 
 1- Stop the container:
 
@@ -22,7 +22,7 @@ To upgrade Gemnasium Entreprise to a new version:
 
 3- Pull the new image:
 
-    docker pull gemnasium/entreprise:latest
+    docker pull gemnasium/enterprise:latest
 
 4- Run the image again (see :ref:`run_docker_image`.). Gemnasium Enterprise will update your data automatically, if necessary.
 
