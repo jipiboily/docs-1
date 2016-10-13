@@ -213,5 +213,5 @@ The docker image doesn't have a SSH server, because docker provides everything n
 
 will create a new bash session, with the root user.
 
-.. warning:: With great power comes great responsability: as root, you can damage files inside the container, including your persisted data.
+.. warning:: With great power comes great responsibility: as root, you can damage files inside the container, including your persisted data.
 
