@@ -29,6 +29,11 @@ To create local volumes, on you server::
 
 .. _ssl_configuration:
 
+License key
+-----------
+
+As you will see, in all the ``docker run`` commands, there is a ``-e LICENSE_KEY=YOUR_OWN_LICENSE_KEY \`. You need to replace `YOUR_OWN_LICENSE_KEY`` with the license we gave you. If you don't have one, please get in touch and we'll get that sorted.
+
 Configuring SSL
 ---------------
 
@@ -57,6 +62,7 @@ The 2 files **must** be available in ``/etc/gemnasium/ssl``, inside the containe
     --restart always \
     -v /host/path/to/ssl/:/etc/gemnasium/ssl \
     -p 80:80 -p 443:443 \
+    -e LICENSE_KEY=YOUR_OWN_LICENSE_KEY \
     -v gemnasium-data:/var/opt/gemnasium/ \
     -v gemnasium-logs:/var/log/ \
     -v /var/run/docker.sock:/var/run/docker.sock \
@@ -76,6 +82,7 @@ If you need to use a different port for https than 443, use the ``EXTERNAL_URL``
     --restart always \
     -v /host/path/to/ssl/:/etc/gemnasium/ssl \
     -p 80:80 -p 8443:443 \
+    -e LICENSE_KEY=YOUR_OWN_LICENSE_KEY \
     -e EXTERNAL_URL=https://gemnasium.example.com:8443/ \
     -v gemnasium-data:/var/opt/gemnasium/ \
     -v gemnasium-logs:/var/log/ \
@@ -98,6 +105,7 @@ Run the image::
     --restart always \
     -e REDIRECT_HTTP_TO_HTTPS=false \
     -p 80:80 \
+    -e LICENSE_KEY=YOUR_OWN_LICENSE_KEY \
     -v gemnasium-data:/var/opt/gemnasium/ \
     -v gemnasium-logs:/var/log/ \
     -v /var/run/docker.sock:/var/run/docker.sock \
@@ -127,6 +135,7 @@ Use this command instead:
     --restart always \
     -v /host/path/to/ssl/:/etc/gemnasium/ssl \
     -p 80:80 -p 443:443 \
+    -e LICENSE_KEY=YOUR_OWN_LICENSE_KEY \
     -v gemnasium-data:/var/opt/gemnasium/:Z \
     -v gemnasium-logs:/var/log/:Z \
     -v /var/run/docker.sock:/var/run/docker.sock:Z \

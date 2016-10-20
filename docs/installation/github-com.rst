@@ -14,7 +14,7 @@ To do that:
 
 - go on https://github.com/settings/developers
 - click on the "Register a new application"
-- Set the name to "Gemnasium Enterprise Login", Homepage URL to your Gemnasium Enterprise base URL (example: "https://gemnasium.example.com/") and finally the callback URL to be ```{homepage URL}/auth/auth/github.com/login/callback``` where you replace the home with your Gemnasium Enterprise host (example: `https://gemnasium.example.com/auth/auth/github.com/login/callback`)
+- Set the name to "Gemnasium Enterprise Login", Homepage URL to your Gemnasium Enterprise base URL (example: "https://gemnasium.example.com/") and finally the callback URL to be ``{homepage URL}/auth/auth/github.com/login/callback`` where you replace the home with your Gemnasium Enterprise host (example: `https://gemnasium.example.com/auth/auth/github.com/login/callback`)
 - Click on the "Register application" button.
 
 You will need some the client ID & secret you see on the confirmation page for the next section. You can keep that tab open and open a new tab to https://github.com/settings/developers to create the second application.
@@ -23,7 +23,7 @@ To create the second application required:
 
 - go on https://github.com/settings/developers
 - click on the "Register a new application"
-- Set the name to "Gemnasium Enterprise Sync", Homepage URL to your Gemnasium Enterprise base URL (example: "https://gemnasium.example.com/") and finally the callback URL to be ```{homepage URL}/auth/auth/github.com/sync/callback``` where you replace the home with your Gemnasium Enterprise host (example: `https://gemnasium.example.com/auth/auth/github.com/sync/callback`)
+- Set the name to "Gemnasium Enterprise Sync", Homepage URL to your Gemnasium Enterprise base URL (example: "https://gemnasium.example.com/") and finally the callback URL to be ``{homepage URL}/auth/auth/github.com/sync/callback`` where you replace the home with your Gemnasium Enterprise host (example: `https://gemnasium.example.com/auth/auth/github.com/sync/callback`)
 - Click on the "Register application" button.
 
 
