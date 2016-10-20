@@ -36,6 +36,8 @@ Contents:
    installation/docker_image
    installation/smtp
    installation/env
+   installation/github-com
+   installation/github-enterprise
    installation/upgrade
    installation/troubleshoot
    installation/backup
