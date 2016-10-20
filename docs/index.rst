@@ -38,6 +38,7 @@ Contents:
    installation/env
    installation/github-com
    installation/github-enterprise
+   installation/slack
    installation/upgrade
    installation/troubleshoot
    installation/backup
