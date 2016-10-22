@@ -10,7 +10,7 @@ Use the left navigation bar to browse the documentation, the Search bar in the t
 Release Notes
 =============
 
-1.0.0-beta1 - 2016-10-17
+1.0.0-beta1 - 2016-10-21
 ------------------------
 
 * First private beta

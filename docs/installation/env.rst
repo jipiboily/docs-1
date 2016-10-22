@@ -11,7 +11,8 @@ Compose expects each line in an env file to be in VAR=VAL format. Lines beginnin
 
 To use the environment file, add the ``--env-file=[file name]`` to your ``docker run`` command line.
 
-With docker-compose, the name should be named ``.env`` in the same directory as your ``docker-compose.yaml`` file, and will be loaded automatically.
+With docker-compose, the name should be named ``.env`` in the same directory as your ``docker-compose.yaml`` file, and will be loaded automatically. 
+Remember to specify the env variables expected in the file, otherwise docker-compose will simply ignore them.
 
 Variables List
 ^^^^^^^^^^^^^^
@@ -19,6 +20,10 @@ Variables List
 +---------------------------+----------------------------------+------------------------------------+------------------+
 | Env variables             | Usage                            | Required                           | Default          |
 +===========================+==================================+====================================+==================+
+| Main                                                                                                                 |
++---------------------------+----------------------------------+------------------------------------+------------------+
+| ``LICENSE_KEY``           | Your GEE private license key     | required                           |                  |
++---------------------------+----------------------------------+------------------------------------+------------------+
 | Logging                                                                                                              |
 +---------------------------+----------------------------------+------------------------------------+------------------+
 | ``GRAYLOG_SERVICE_HOST``  | Graylog input hostname/ip        | optional                           |                  |

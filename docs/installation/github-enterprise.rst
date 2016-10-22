@@ -29,20 +29,13 @@ To create the second application required:
 Configure Gemnasium Enterprise to use GitHub Enterprise
 -------------------------------------------------------
 
-To be able to login and synchronize projects with GitHub Enterprise, we need to first open a bash prompt into the Gemnasium Enterprise container.
+A convenient script is provided to add everything at once. 
 
 .. code-block:: console
 
-  docker exec -it gemnasium bash
+  docker exec -it gemnasium configure
 
-Once this is done, customize and run the following commands in which you need to replace `github-enterprise.example.com` by your GHE instance host, CLIENT_ID_FOR_LOGIN by the client ID you got from the "Gemnasium Enterprise Login" application we just created on GitHub and CLIENT_SECRET_FOR_LOGIN from the same GitHub application. Repeat for CLIENT_ID_FOR_SYNC & CLIENT_SECRET_FOR_SYNC but with the information from the "Gemnasium Enterprise Sync" application.
+Select "Github", and then fill the corresponding fields with the values from the apps created above.
 
-.. code-block:: console
-
-  auth provider create github-enterprise.example.com github https://github-enterprise.example.com/login/oauth/authorize https://github-enterprise.example.com/login/oauth/access_token
-  auth clients create github-enterprise.example.com login CLIENT_ID_FOR_LOGIN CLIENT_SECRET_FOR_LOGIN user:email
-  auth clients create github-enterprise.example.com sync CLIENT_ID_FOR_SYNC CLIENT_SECRET_FOR_SYNC write:repo_hook,read:org,repo
-  repo-syncer sources create github-enterprise.example.com "GitHub-Enterprise" github https://github-enterprise.example.com/api/v3
-
-
-Once all those commands ran, you are ready to login with GitHub Enterprise and add projects from it.
+Your Gemnasium Enterprise users are now able to login using their GitHub Enterprise account.
+A new source with the name entered in the configure script is also available on the "Add Project" screen.

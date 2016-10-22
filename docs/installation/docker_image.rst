@@ -32,7 +32,7 @@ To create local volumes, on you server::
 License key
 -----------
 
-As you will see, in all the ``docker run`` commands, there is a ``-e LICENSE_KEY=YOUR_OWN_LICENSE_KEY \`. You need to replace `YOUR_OWN_LICENSE_KEY`` with the license we gave you. If you don't have one, please get in touch and we'll get that sorted.
+As you will see, in all the ``docker run`` commands, there is a ``-e LICENSE_KEY=YOUR_OWN_LICENSE_KEY \``. You need to replace ``YOUR_OWN_LICENSE_KEY`` with the license we gave you. If you don't have one, please get in touch and we'll get that sorted.
 
 Configuring SSL
 ---------------
@@ -75,7 +75,7 @@ This will pull and start Gemnasium Enterprise. Your instance will be available a
 If you need to use a different port for https than 443, use the ``EXTERNAL_URL`` env var to specify the full URL of your Gemnasium Enterprise server, including the port used:
 
 .. code-block:: console
-  :emphasize-lines: 6
+  :emphasize-lines: 7
 
   docker run --detach  \
     --name gemnasium \
@@ -128,7 +128,7 @@ Gemnasium Enterprise can't be run directly on SELinux servers, because:
 Use this command instead:
 
 .. code-block:: console
-  :emphasize-lines: 6-8
+  :emphasize-lines: 7-9
 
   docker run --detach  \
     --name gemnasium \
