@@ -14,3 +14,5 @@ Release Notes
 ------------------------
 
 * First private beta
+* GitHub.com and GitHub Enterprise support
+* Slack integration for notifications
