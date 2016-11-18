@@ -117,7 +117,8 @@ The service is available after a few seconds on the port 80 of your server.
 
 
 SELinux
-^^^^^^^
+-------
+
 .. todo: test with SELinux in real conditions
 
 Gemnasium Enterprise can't be run directly on SELinux servers, because:
@@ -152,7 +153,7 @@ Please refer to this project to install the proper SELinux module to fix the sec
 .. _docker_image_volumes:
 
 Volumes
-^^^^^^^
+-------
 
 Gemnasium is storing data in two folders, which should be mounted as volumes
 
