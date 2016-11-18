@@ -68,7 +68,7 @@ The 2 files **must** be available in ``/etc/gemnasium/ssl``, inside the containe
     -v /var/run/docker.sock:/var/run/docker.sock \
     gemnasium/enterprise:latest
 
-.. note:: Gemnasium needs the docker socket to be mount, since some internal jobs are launched inside containers.
+.. note:: Gemnasium needs the docker socket to be mounted only if the Reports feature is being used. If not, the line ``-v /var/run/docker.sock:/var/run/docker.sock`` can be safely removed.
 
 This will pull and start Gemnasium Enterprise. Your instance will be available at https://gemnasium.example.com after a few seconds.
 
