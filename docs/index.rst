@@ -46,6 +46,6 @@ Contents:
    :maxdepth: 2
    :caption: Integrations
 
-   integrations/github-com
-   integrations/github-enterprise
+   integrations/github
+   integrations/gitlab
    integrations/slack
