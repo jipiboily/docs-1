@@ -1,5 +1,5 @@
-Configure GitHub
-================
+GitHub.com
+==========
 
 Before being able to add projects from github.com, Gemnasium Enterprise needs to be configured to be able to access it.
 

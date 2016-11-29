@@ -10,6 +10,19 @@ Use the left navigation bar to browse the documentation, the Search bar in the t
 Release Notes
 =============
 
+1.0.0-beta3 - 2016-11-29
+------------------------
+
+* [FEATURE] GitLab Support
+* [FEATURE] New notifications in the UI
+
+
+Known issues:
+
+* [BUG][GITLAB] Symlinks on dependency files are not followed
+* [BUG][GITLAB] Dependency files greater than 2MB are ignored
+* [BUG] Can't sign-in using an oauth account if the same email is already used
+
 1.0.0-beta2 - 2016-11-18
 ------------------------
 

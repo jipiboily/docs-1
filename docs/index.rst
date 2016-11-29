@@ -36,9 +36,16 @@ Contents:
    installation/docker_image
    installation/smtp
    installation/env
-   installation/github-com
-   installation/github-enterprise
-   installation/slack
    installation/upgrade
    installation/troubleshoot
    installation/backup
+
+.. _integrations-docs:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Integrations
+
+   integrations/github-com
+   integrations/github-enterprise
+   integrations/slack

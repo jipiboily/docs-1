@@ -1,5 +1,5 @@
-Configure Slack notifications
-=============================
+Slack
+=====
 
 Because it's an enterprise version installed on your server, you need to do a few things in order to add Slack support.
 
@@ -12,17 +12,12 @@ The first step is to create a new Slack application, on Slack itself. Here are t
 - Go in the "OAuth & Permissions" section (in the left menu) and set the redirect URL to https://gemnasium.example.com/auth/auth/slack.com/webhook/callback
 
 
-Now, we need to configure Gemnasium Enterprise to use it.
+Now, we need to configure Gemnasium Enterprise to use it:
 
 .. code-block:: console
 
-  docker exec -it gemnasium bash
+    docker exec -it gemnasium configure
 
-Replace the CLIENT_ID and CLIENT_SECRET with the ID & secret of the app you just created and past the commands
+Select "Slack", and then fill the corresponding fields with the values from the apps created above.
 
-.. code-block:: console
-
-  auth providers create slack.com slack https://slack.com/oauth/authorize https://slack.com/api/oauth.access
-  auth clients create slack.com webhook CLIENT_ID CLIENT_SECRET incoming-webhook
-
-Now you only need to configure Slack notifications for a project in the web UI. You can do that in the "Settings" of a specific project.
+Now you only need to configure Slack notifications for a project in the web UI. You can do that in the "Settings" of each project.

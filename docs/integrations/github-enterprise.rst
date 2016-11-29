@@ -1,5 +1,5 @@
-Configure GitHub Enterprise
-===========================
+GitHub Enterprise
+=================
 
 Before being able to add projects from your GitHub Enterprise (GHE) instance, Gemnasium Enterprise needs to be configured to be able to access it.
 
@@ -29,13 +29,13 @@ To create the second application required:
 Configure Gemnasium Enterprise to use GitHub Enterprise
 -------------------------------------------------------
 
-A convenient script is provided to add everything at once. 
+A convenient script is provided to add everything at once:
 
 .. code-block:: console
 
   docker exec -it gemnasium configure
 
-Select "Github", and then fill the corresponding fields with the values from the apps created above.
+Select "GitHub Enterprise", and then fill the corresponding fields with the values from the apps created above.
 
 Your Gemnasium Enterprise users are now able to login using their GitHub Enterprise account.
 A new source with the name entered in the configure script is also available on the "Add Project" screen.
