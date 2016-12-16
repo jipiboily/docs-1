@@ -10,6 +10,14 @@ Use the left navigation bar to browse the documentation, the Search bar in the t
 Release Notes
 =============
 
+1.0.0-beta4 - 2016-12-15
+------------------------
+
+* [FEATURE] "New package release" notifications via Slack and email
+* [BUG] Fix file upload form when adding unsupported file
+* [BUG] Fix left menu bar behavior on small devices layout
+* [BUG] Fix oauth signup error handling
+
 1.0.0-beta3 - 2016-11-29
 ------------------------
 
