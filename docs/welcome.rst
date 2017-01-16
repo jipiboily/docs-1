@@ -10,6 +10,19 @@ Use the left navigation bar to browse the documentation, the Search bar in the t
 Release Notes
 =============
 
+1.0.0-rc1 - 2017-01-16
+----------------------
+
+This is the last pre-release before 1.0.0, if no bug is found.
+
+* [FEATURE] Add Bitbucket.org (Bitbucket Cloud) Support
+* [FEATURE] Add project logs with realtime update
+* [FEATURE] Improve project notification channels configuration
+* [FEATURE] Allow to edit existing project notification channel
+* [FEATURE] Improve user notifications configuration
+* [BUG] Fix various UI bugs
+* [BUG] Some PHP packages were not fully synced
+
 1.0.0-beta4 - 2016-12-15
 ------------------------
 
