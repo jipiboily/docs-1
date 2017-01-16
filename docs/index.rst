@@ -48,4 +48,5 @@ Contents:
 
    integrations/github
    integrations/gitlab
+   integrations/bitbucketcloud
    integrations/slack
