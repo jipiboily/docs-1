@@ -15,6 +15,9 @@ Release Notes
 
 * [FEATURE] Add Bitbucket Server support
 * [BUG] Weekly digests are now sent on Monday mornings, 8am, instead of Sunday at midnight
+* [BUG] Adding an empty project from GitHub/Gitlab/bitbucket.org was causing
+  the webhook registration to fail. The project bootstrapping was considered
+  as finished, and the project was not synced after the first commit.
 
 Note: We have switched to `Webpack 2 <https://webpack.js.org/>`_ for assets bundling, this is transparent for users.
 
