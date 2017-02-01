@@ -10,6 +10,20 @@ Use the left navigation bar to browse the documentation, the Search bar in the t
 Release Notes
 =============
 
+1.1.0 - 2017-01-31
+------------------
+
+* [FEATURE] Add Bitbucket Server support
+* [BUG] Weekly digests are now sent on Monday mornings, 8am, instead of Sunday at midnight
+
+Note: We have switched to `Webpack 2 <https://webpack.js.org/>`_ for assets bundling, this is transparent for users.
+
+1.0.0 - 2017-01-27
+------------------
+
+Same as 1.0.0-rc1.
+
+
 1.0.0-rc1 - 2017-01-16
 ----------------------
 
