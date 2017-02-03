@@ -10,6 +10,11 @@ Use the left navigation bar to browse the documentation, the Search bar in the t
 Release Notes
 =============
 
+1.1.1 - 2017-02-03
+------------------
+
+* [BUG] Fix webhook handler. The service in charge of receiving and triggering a project sync was returning a 200 and dropping the event in some cases.
+
 1.1.0 - 2017-01-31
 ------------------
 
