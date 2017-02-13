@@ -8,9 +8,8 @@ The first step is to create a new Slack application, on Slack itself. Here are t
 - Go on https://api.slack.com/apps?new_app=1
 - Set the App Name to be "Gemnasium Enterprise", and then click on the "Create App" button.
 - You will need the Client ID and Client Secret in a moment. You can keep them around or go back to see them when you need them.
-- (optional) By default, there is no Gemnasium icon for the messages sent on Slack. If you want it, which we suggest, you can upload it on the "Basic Information" screen of the app you just created, in the "Display Information" section. `You can use this icon. </_static/img/gemnasium-icon.png>`_
+- (optional) By default, there is no Gemnasium icon for the messages sent on Slack. If you want it, which we suggest, you can upload it on the "Basic Information" screen of the app you just created, in the "Display Information" section. :download:`You can use this icon. <../_static/img/gemnasium-icon.png>`.
 - Go in the "OAuth & Permissions" section (in the left menu) and set the redirect URL to https://gemnasium.example.com/auth/auth/slack.com/webhook/callback
-
 
 Now, we need to configure Gemnasium Enterprise to use it:
 
