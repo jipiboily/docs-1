@@ -104,6 +104,7 @@ Run the image::
     --name gemnasium \
     --restart always \
     -e REDIRECT_HTTP_TO_HTTPS=false \
+    -e EXTERNAL_URL=https://gemnasium.example.com/ \
     -p 80:80 \
     -e LICENSE_KEY=YOUR_OWN_LICENSE_KEY \
     -v gemnasium-data:/var/opt/gemnasium/ \
@@ -114,6 +115,7 @@ Run the image::
 .. note:: The environment variable ``REDIRECT_HTTP_TO_HTTPS`` is `true` by default, and must be ``false`` in this case.
 
 The service is available after a few seconds on the port 80 of your server.
+Use the ``EXTERNAL_URL`` variable to specify the full URL of your Gemnasium Enterprise server, including the port if necessary.
 
 
 SELinux
