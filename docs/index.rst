@@ -39,6 +39,8 @@ Contents:
    installation/upgrade
    installation/troubleshoot
    installation/backup
+   installation/proxy
+   installation/self_signed_certs
 
 .. _integrations-docs:
 

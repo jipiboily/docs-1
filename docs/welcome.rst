@@ -10,6 +10,16 @@ Use the left navigation bar to browse the documentation, the Search bar in the t
 Release Notes
 =============
 
+1.1.2 - 2017-02-16
+------------------
+
+* [BUG] Minor bug and fixes
+* [BUG] UI pages now expose an error to the user if the backend is not available.
+* [FEATURE] New button to copy the notification channels of a project to all the projects of the team
+* [FEATURE] New ``MAILER_EMAIL_FROM`` env var to specify the sender of GEE email notifications
+* [DOC] Added documentation for CA certs used in integrations
+* [DOC] Added documentation for users behind proxies
+
 1.1.1 - 2017-02-03
 ------------------
 

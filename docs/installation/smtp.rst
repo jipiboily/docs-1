@@ -25,3 +25,6 @@ The SMTP password can be plain auth, or a secret (CRAM-MD5 auth).
 These variables are all optional.
 
 SSL and TLS are supported, and will be automatically used if the port (``SMTP_SERVICE_PORT``) is ``465`` or ``587``.
+
+The sender for email notifications will be by default `app@gemnasium.com` which can be an issue with your smtp server.
+It can be updated by passing the ``MAILER_EMAIL_FROM`` environment var to your Gemnasium Enterprise container.
