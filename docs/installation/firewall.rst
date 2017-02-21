@@ -25,12 +25,14 @@ Outgoing traffic
 While Gemnasium Enterprise should be completely isolated from the outside for incoming connections, some outgoing traffic is necessary for normal operation.
 The following ports must be open on your firewall for outgoing traffic:
 
-========================  ========================  ========= ==========================================
+========================  ========================  ========= ===========================================
 Address                   Port                      Protocol  Usage
-========================  ========================  ========= ==========================================
+========================  ========================  ========= ===========================================
 sync.gemnasium.com        443                       tcp       Sync with Gemnasium main DB
-index.docker.io           443                       tcp       Pull updates of gemnasium/enterprise image
-========================  ========================  ========= ==========================================
+index.docker.io           443                       tcp       Pull updates of gemnasium/enterprise image,
+                                                              if used.
+quay.io                   443                       tcp       Quay docker repository, if used.
+========================  ========================  ========= ===========================================
 
 What data is sent to sync.gemnasium.com?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -40,10 +42,16 @@ Gemnasium's main DB would require a huge amount of storage and a lot of bandwidt
 
 To avoid this situation, your instance of Gemnasium Enterprise periodically sends a list of the packages (dependencies) used in your projects to https://sync.gemnasium.com
 In return, Gemnasium syncer provides all the metadata corresponding to this request, including the security advisories.
+Gemnasium keeps the following information in private log entries:
+
+* Timestamp of the current sync request
+* Customer (based on license key)
+* Gemnasium version used
+* Number of packages per type (gems, npms, ...)
 
 .. note:: Private dependencies are completely ignored by the syncer.
 
 Advisories can be created at any time on Gemnasium.com; that's why your instance synchronizes hourly.
-If one of your projects is using a dependency affected by a security issue, you will be instantly notified by your instance.
+If one of your projects is using a dependency affected by a security issue, you will be notified by your instance within the hour.
 
 .. note:: Gemnasium is using data (advisories) from security companies (partnerships only). Your data will never be submitted directly to these companies, but Gemnasium may share anonymized statistical data.

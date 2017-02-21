@@ -3,14 +3,18 @@ Run Gemnasium Enterprise
 
 Gemnasium Enterprise is shipped as a single, all-included `docker image <https://docs.docker.com/engine/tutorials/dockerimages/>`_.
 
-Docker Hub Account
-------------------
+Download Gemnasium Enterprise
+-----------------------------
 
-In order to be able to download the Gemnasium Enterprise docker image from the `Docker Hub <https://hub.docker.com/>`_, you must be
-authenticated on docker hub, and provide the username used to pull the image to
-Gemnasium.
+In order to be able to download the Gemnasium Enterprise docker image, you must have one of these accounts:
 
-To have access to the Gemnasium Enterprise image, send us the Docker Hub user you want; we will share the image with that user.
+* `Docker Hub <https://hub.docker.com/>`_
+* `Quay <https://quay.io>`_
+
+
+Send us the name of the account used and we will share the image with that user.
+
+.. note:: This documentation is based on Docker hub image URLs, ie: ``gemnasium/enterprise``. If Quay is being used instead, prefix the image name to have ``quay.io/gemnasium/enterprise``.
 
 .. _run_docker_image:
 

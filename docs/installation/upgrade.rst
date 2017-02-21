@@ -1,36 +1,44 @@
 Upgrade Gemnasium Enterprise
 ============================
 
-While the data about packages, versions, etc. are automatically updaded, and
+While the data about packages, versions, etc. is automatically updated, and
 stored in your local database, Gemnasium Enterprise won't upgrade itself
 automatically.
 
 Using latest version
 --------------------
 
-Every night, a new build of Gemnasium Enterprise source code will generate a ``gemnasium/enterprise:latest`` image.
-
 To upgrade Gemnasium Enterprise to a new version:
 
-1- Stop the container:
+1- Pull the new image:
 
-    docker stop gemnasium
-
-2- Remove the container:
-
-    docker rm gemnasium
-
-3- Pull the new image:
+.. code::
 
     docker pull gemnasium/enterprise:latest
 
-4- Run the image again (see :ref:`run_docker_image`.). Gemnasium Enterprise will update your data automatically, if necessary.
+2- Stop and remove the container:
 
-Using tagged version
---------------------
+.. code::
 
-Living on the edge is probably not a good idea on the long term.
-Gemnasium will provide new tagged version for each release.
+    docker rm -f gemnasium
+
+3- Run the image again (see :ref:`run_docker_image`.). Gemnasium Enterprise will update your data automatically, if necessary.
+
+.. code::
+
+    docker run [...]
+
+
+Using nightly version
+----------------------
+
+Every night, a new build of Gemnasium Enterprise will be generated, as a ``gemnasium/enterprise:nightly`` image.
+This image is intended for debugging only, and should not be used for production.
+
+Using a tagged version
+----------------------
 
 The available tags are listed here:
 https://hub.docker.com/r/gemnasium/enterprise/tags/
+
+It is recommended to always use the ``latest`` tag.

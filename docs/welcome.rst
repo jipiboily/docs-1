@@ -10,6 +10,10 @@ Use the left navigation bar to browse the documentation, the Search bar in the t
 Release Notes
 =============
 
+1.1.3 - Unreleased
+
+* Gemnasium Enterprise is now also available on Quay.io
+
 1.1.2 - 2017-02-16
 ------------------
 

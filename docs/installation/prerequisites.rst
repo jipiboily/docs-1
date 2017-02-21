@@ -1,9 +1,11 @@
 Prerequisites
 =============
 
-.. note:: You must have a valid subscription to setup Gemnasium Enterprise.
-    If you don't have a subscription yet, please contact our `support <email:support@gemnasium.com>`_.
+Subscriptions
+-------------
 
+* As Gemnasium Enterprise is provided as a docker image, you must have a `Docker Hub <https://hub.docker.com>`_ or `Quay <https://quay.io>`_ account to download it.
+* A Gemnasium Enterprise license is required. If do not have your license yet, please contact our `support <email:support@gemnasium.com>`_.
 
 System Requirements
 -------------------
@@ -13,8 +15,8 @@ Hardware
 
 * Physical or virtual system, or an instance running on a public or private IaaS.
 * 1 vCPU
-* Minimum of 8GB RAM
-* Minimum 15GB hard disk space
+* Minimum of 2GB RAM
+* Minimum 20GB hard disk space
 
 Software
 ^^^^^^^^
