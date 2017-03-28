@@ -4,7 +4,7 @@ Proxy configuration
 Gemnasium Enterprise is designed to run behind your firewalls, inside your network.
 If your network is using a proxy to access http or https resources, you may need to adapt GEE configuration.
 
-By default, docker will use a `default network bridge <https://docs.docker.com/engine/userguide/networking/>`, so the network stack is shared with the host where docker is running.
+By default, docker will use a `default network bridge <https://docs.docker.com/engine/userguide/networking/>`_, so the network stack is shared with the host where docker is running.
 
 The proxy configuration for Docker is beyond the scope of this documentation, please refer to Docker and your operating system documentation if needed.
 
