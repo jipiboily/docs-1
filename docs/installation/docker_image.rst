@@ -108,7 +108,7 @@ Run the image::
     --name gemnasium \
     --restart always \
     -e REDIRECT_HTTP_TO_HTTPS=false \
-    -e EXTERNAL_URL=https://gemnasium.example.com/ \
+    -e EXTERNAL_URL=http://gemnasium.example.com/ \
     -p 80:80 \
     -e LICENSE_KEY=YOUR_OWN_LICENSE_KEY \
     -v gemnasium-data:/var/opt/gemnasium/ \
